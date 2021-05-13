@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>管理员首页</title>
+    <link href="mystyle.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+
+
+        <h:form styleClass="box1" style="margin: 0 auto;width:150px">
+
+
+            <h3>欢迎您，#{loginBean.username}</h3>
+            <h:commandButton  value="查看用户信息" action="/admin/userManager/viewUser.xhtml"/>
+            <br/>    <br/>
+            <h:commandButton  value="查看海选投票" action="/admin/auditionVote/auditionVoteList.xtml"/>
+            <br/>    <br/>
+            <h:commandButton  value="查看多选投票" action="/admin/multiVote/multiVoteList.xhtml"/>
+            <br/>    <br/>
+            <h:commandButton  value="查看单选投票信息" action="/admin/singleVote/singleVoteList.xhtml"/>
+            <br/>    <br/>
+            <h:commandButton  value="查看用户投票记录" action="/common/voteRecord/recordIndex.xhtml"/>
+            <br/>    <br/>
+            <h:commandButton  value="退出登录" action="/login.xhtml" actionListener="#{loginBean.logoutSys}"/>
+
+
+        </h:form>
+
+
+</h:body>
+</html>

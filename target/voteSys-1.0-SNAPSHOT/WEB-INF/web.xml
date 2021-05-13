@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param><!--描述了这个JSF应用程序在开发生命周期中的位置，有效值为 “ Development”，“ UnitTest”，“ SystemTest”或“ Production”-->
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <servlet><!--JSF核心控制器 Faces Servlet-->
+        <servlet-name>Faces Servlet</servlet-name><!--我们注册使用的组件名 Faces Servlet-->
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class><!--指向注册组件类的地址-->
+        <load-on-startup>1</load-on-startup><!--启动顺序，让这个servlet随servlet容器一起启动-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern><!--配置访问路径-->
+    </servlet-mapping>
+    <session-config><!--会话超时配置-->
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list><!--指定欢迎页面 index.xhtml-->
+        <welcome-file>login.xhtml</welcome-file>
+    </welcome-file-list>
+
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.sys.voteSys.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/user/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/common/*</url-pattern>
+    </filter-mapping>
+
+</web-app>

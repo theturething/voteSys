@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>#{voteTotalBean.theme}选项投票总数</title>
+</h:head>
+<h:body>
+    <h:form style="margin:0 auto;width: 500px">
+        <h:dataTable id="multiChoice" value="#{voteTotalBean.multiChoices}" var="multiChoice" border="1">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="投票主题"/>
+                </f:facet>
+                <h:outputText value="#{multiChoice.theme}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="投票选项"/>
+                </f:facet>
+                <h:outputText value="#{multiChoice.content}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="投票总数"/>
+                </f:facet>
+                <h:outputText value="#{multiChoice.voteTotal}"/>
+            </h:column>
+
+        </h:dataTable>
+
+        <br/>      <br/>
+
+        <h:commandButton action="/admin/multiVote/multiVoteList.xhtml" value="返回多选投票列表页面"/>
+
+    </h:form>
+</h:body>
+</html>

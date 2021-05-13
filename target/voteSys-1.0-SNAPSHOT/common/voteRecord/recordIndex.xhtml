@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>投票记录管理页面</title>
+</h:head>
+<h:body>
+    <h:form style="margin:0 auto;width: 100px">
+        <h:commandButton value="查看单选记录" action="/common/voteRecord/singleReCordList.xhtml"/>
+        <br/>   <br/>
+        <h:commandButton value="查看多选记录" action="/common/voteRecord/multiRecordList.xhtml"/>
+        <br/>   <br/>
+        <h:commandButton value="查看海选记录" action="/common/voteRecord/auditionRecordList.xhtml"/>
+        <br/>   <br/>
+        <h:commandButton value="返回#{voteRecordBean.logger}首页" action="#{voteRecordBean.back}"/>
+
+
+    </h:form>
+</h:body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>添加用户</title>
+</head>
+
+    <h:form style="margin:0 auto;width: 500px">
+        <h:panelGroup>
+            <h:panelGrid>
+                <h:outputText value="添加用户"/>
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="0">
+                <h:outputText value="用户名"/>
+                <h:inputText value="#{adminBean.user.username}"/>
+
+                <h:outputText value="密码"/>
+                <h:inputText value="#{adminBean.user.password}"/>
+
+                <h:outputText value="性别"/>
+                <h:inputText value="#{adminBean.user.sex}"/>
+
+                <h:outputText value="年龄"/>
+                <h:inputText value="#{adminBean.user.age}"/>
+
+                <h:outputText value="邮箱"/>
+                <h:inputText value="#{adminBean.user.email}"/>
+
+                <h:outputText value="手机号码"/>
+                <h:inputText value="#{adminBean.user.phone}"/>
+
+            </h:panelGrid>
+        </h:panelGroup>
+        <br/>   <br/>
+        <h:commandButton action="#{adminBean.addUser}" value="确认添加用户"/>
+
+
+    </h:form>
+
+</html>

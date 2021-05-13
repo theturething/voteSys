@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>进行海选投票</title>
+    <link href="style/mystyle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h:form styleClass="box1">
+    <h:panelGrid columns="2" cellpadding="0">
+
+        <h:outputText value="投票主题:  "/>
+        <h:outputText value="#{auditionVoteBean.auditionVote.theme}"/>
+
+        <h:outputText value="投票介绍:  "/>
+        <h:outputText value="#{auditionVoteBean.auditionVote.introduction}"/>
+
+        <h:outputText value="请输入您的投票:  "/>
+        <h:inputText value="#{auditionVoteBean.content}"/>
+
+    </h:panelGrid>
+
+    <h:commandButton action="#{auditionVoteBean.voteAudition(auditionVoteBean.content,auditionVoteBean.auditionVote)}" value="确认投票"/>
+
+</h:form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>海选投票项目列表</title>
+    <link href="style/mystyle.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<body>
+<h:form styleClass="box1style">
+    <h:dataTable id="auditionVote" value="#{auditionVoteBean.auditionVotes}" var="auditionVote" border="1">
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="投票主题"/>
+            </f:facet>
+            <h:outputText value="#{auditionVote.theme}"/>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="投票介绍"/>
+            </f:facet>
+            <h:outputText value="#{auditionVote.introduction}"/>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="投票开始时间"/>
+            </f:facet>
+            <h:outputText value="#{auditionVote.beginTime}">
+                <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>
+            </h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="投票结束时间"/>
+            </f:facet>
+            <h:outputText value="#{auditionVote.endTime}">
+                <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>
+            </h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="参与投票"/>
+            </f:facet>
+            <h:commandLink action="voteAudition" actionListener="#{auditionVoteBean.voteAudition}">
+                <h:outputText value="参与投票"/>
+                <f:param id="theme" name="theme" value="#{auditionVote.theme}"/>
+            </h:commandLink>
+        </h:column>
+
+    </h:dataTable>
+
+    <br/>
+    <h:commandButton action="/user/userIndex.xhtml" value="返回用户首页"/>
+    <br/>    <br/>
+    <h:commandButton value="退出登录" action="/login.xhtml" actionListener="#{loginBean.logoutSys}"/>
+
+
+</h:form>
+</body>
+</html>

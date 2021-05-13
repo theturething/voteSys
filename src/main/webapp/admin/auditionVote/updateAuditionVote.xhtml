@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>编辑海选投票</title>
+</head>
+<body>
+<h:form styleClass="box1" style="margin:0 auto;width: 500px">
+    <h:panelGroup>
+        <h:panelGrid columns="2" cellpadding="0">
+
+            <h:outputText value="投票主题"/>
+            <h:outputText value="#{auditionVoteBean.auditionVote.theme}"/>
+
+            <h:outputText value="投票介绍"/>
+            <h:inputText value="#{auditionVoteBean.auditionVote.introduction}"/>
+
+            <h:outputText value="开始时间(yyyy-MM-dd HH:mm:ss)"/>
+            <h:inputText value="#{auditionVoteBean.auditionVote.beginTime}"/>
+
+
+            <h:outputText value="截止时间(yyyy-MM-dd HH:mm:ss)"/>
+            <h:inputText value="#{auditionVoteBean.auditionVote.endTime}"/>
+
+        </h:panelGrid>
+    </h:panelGroup>
+    <br/>
+    <h:commandButton action="#{auditionVoteBean.updateAuditionVote}" value="确认更新投票信息"/>
+</h:form>
+</body>
+</html>

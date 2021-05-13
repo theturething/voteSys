@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:head>
+        <title>用户登录</title>
+        <link href="style/mystyle.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+
+    <h:form styleClass="box1">
+
+        <h3 style="text-align: center"> 请输入你的用户名和密码</h3>
+        <h:panelGrid columns="2" styleClass="box1">
+
+            <h:outputText value="用户名"/>
+            <h:inputText value="#{loginBean.username}"/>
+
+            <h:outputText value="密码"/>
+            <h:inputSecret value="#{loginBean.password}"/>
+
+            <h:outputText value="是否为管理员"/>
+            <h:selectOneRadio value="#{loginBean.admin}">
+                <f:selectItem itemValue="true" itemLabel="true"/>
+                <f:selectItem itemValue="fales" itemLabel="fales"/>
+            </h:selectOneRadio>
+
+            <h:commandButton  value="登录" action="#{loginBean.loginSys}"/>
+            <a href="register.xhtml">注册</a>
+        </h:panelGrid>
+
+    </h:form>
+
+    </h:body>
+
+</html>

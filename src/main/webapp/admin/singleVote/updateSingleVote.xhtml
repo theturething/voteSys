@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>编辑投票信息</title>
+</h:head>
+<h:body>
+    <h:form styleClass="box1" style="margin:0 auto;width: 500px">
+        <h3>欢迎您，#{loginBean.username}</h3>
+        <h:panelGroup>
+
+        <h:panelGrid columns="2" cellpadding="0">
+            <h:outputText value="投票主题"/>
+            <h:outputText value="#{singleVoteBean.singleVote.theme}"/>
+
+            <h:outputText value="投票介绍"/>
+            <h:inputText value="#{singleVoteBean.singleVote.introduction}"/>
+
+            <h:outputText value="选项个数"/>
+            <h:inputText value="#{singleVoteBean.singleVote.choiceNum}"/>
+
+            <h:outputText value="开始时间(yyyy-MM-dd HH:mm:ss)"/>
+            <h:inputText value="#{singleVoteBean.beginTime}"/>
+
+
+            <h:outputText value="截止时间(yyyy-MM-dd HH:mm:ss)"/>
+            <h:inputText value="#{singleVoteBean.endTime}"/>
+
+            <h:outputText value="选项（以英文逗号分割多个选项）"/>
+            <h:inputText value="#{singleVoteBean.contents}"/>
+
+        </h:panelGrid>
+        </h:panelGroup>
+        <br/>
+        <h:commandButton action="#{singleVoteBean.updateSingleVote}" value="确认更改投票"/>
+
+    </h:form>
+</h:body>
+</html>

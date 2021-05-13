@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>编辑用户信息</title>
+    <link href="mystyle.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+    <h:form styleClass="box1" style="margin:0 auto;width: 500px">
+        <h3>欢迎您，#{loginBean.username}</h3>
+        <h:panelGroup>
+            <h:panelGrid>
+                <h:outputText value="修改用户信息"/>
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="0">
+
+                <h:outputText value="用户名"/>
+                <h:outputText value="#{adminBean.user.username}"/>
+
+                <h:outputText value="密码"/>
+                <h:inputText value="#{adminBean.user.password}"/>
+
+                <h:outputText value="性别"/>
+                <h:inputText value="#{adminBean.user.sex}"/>
+
+                <h:outputText value="年龄"/>
+                <h:inputText value="#{adminBean.user.age}"/>
+
+                <h:outputText value="邮箱地址"/>
+                <h:inputText value="#{adminBean.user.email}"/>
+
+                <h:outputText value="手机号码"/>
+                <h:inputText value="#{adminBean.user.phone}"/>
+
+                <br/>   <br/>
+
+                <f:facet name="footer">
+                    <h:panelGroup id="forbtn">
+                        <h:commandButton value="更新" action="#{adminBean.updateUser}"/>
+                        <br/>   <br/>
+                        <h:commandButton action="/admin/adminIndex.xhtml" value="返回管理员首页"/>
+                        <br/>   <br/>
+                        <h:commandButton action="/admin/adminIndex.xhtml" value="返回管理员首页"/>
+                        <br/>    <br/>
+                        <h:commandButton value="退出登录" action="/login.xhtml" actionListener="#{loginBean.logoutSys}"/>
+                    </h:panelGroup>
+                </f:facet>
+
+            </h:panelGrid>
+        </h:panelGroup>
+
+    </h:form>
+</h:body>
+</html>

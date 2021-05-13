@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+        version="2.3">
+
+    <managed-bean>
+        <managed-bean-name>user</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.User</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>singleVote</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.SingleVote</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>singleChoice</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.SingleChoice</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>auditionVote</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.AuditionVote</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>voteRecord</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.VoteRecord</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>voteRecordBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.VoteRecordBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>voteRecord</property-name>
+            <property-class>com.sys.voteSys.pojo.VoteRecord</property-class>
+            <value>#{voteRecord}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>auditionVoteBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.AuditionVoteBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>auditionVote</property-name>
+            <property-class>com.sys.voteSys.pojo.AuditionVote</property-class>
+            <value>#{auditionVote}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>singleVoteBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.SingleVoteBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>singleVote</property-name>
+            <property-class>com.sys.voteSys.pojo.SingleVote</property-class>
+            <value>#{singleVote}</value>
+        </managed-property>
+        <managed-property>
+            <property-name>singleChoice</property-name>
+            <property-class>com.sys.voteSys.pojo.SingleChoice</property-class>
+            <value>#{singleChoice}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>loginBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.LoginBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>registerBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.RegisterBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>user</property-name>
+            <property-class>com.sys.voteSys.pojo.User</property-class>
+            <value>#{user}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>adminBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.AdminBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>user</property-name>
+            <property-class>com.sys.voteSys.pojo.User</property-class>
+            <value>#{user}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>multiVote</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.MultiVote</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>multiChoice</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.pojo.MultiChoice</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>multiVoteBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.MultiVoteBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>multiVote</property-name>
+            <property-class>com.sys.voteSys.pojo.MultiVote</property-class>
+            <value>#{multiVote}</value>
+        </managed-property>
+        <managed-property>
+            <property-name>multiChoice</property-name>
+            <property-class>com.sys.voteSys.pojo.MultiChoice</property-class>
+            <value>#{multiChoice}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>voteTotalBean</managed-bean-name>
+        <managed-bean-class>com.sys.voteSys.bean.VoteTotalBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <!--管理员和普通用户的登录跳转-->
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>successUser</from-outcome>
+            <to-view-id>/user/userIndex.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>successAdmin</from-outcome>
+            <to-view-id>/admin/adminIndex.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <!--注册页面返回登录页面-->
+    <navigation-rule>
+        <from-view-id>/register.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/userManager/viewUser.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewUser</from-outcome>
+            <to-view-id>/admin/userManager/viewUser.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/userManager/addUser.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>viewUser</from-outcome>
+            <to-view-id>/admin/userManager/viewUser.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>addUserFailure</from-outcome>
+            <to-view-id>/admin/userManager/addUserFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/user/singleVote/singleVoteList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voteSingle</from-outcome>
+            <to-view-id>/user/singleVote/voteSingle.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/user/singleVote/voteSingle.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voteSingleSuccess</from-outcome>
+            <to-view-id>/user/singleVote/voteSingleSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failureVote</from-outcome>
+            <to-view-id>/user/singleVote/failureVote.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>timeNot</from-outcome>
+            <to-view-id>/user/singleVote/timeNot.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/singleVote/singleVoteList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>singleVoteList</from-outcome>
+            <to-view-id>/admin/singleVote/singleVoteList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>singleTotal</from-outcome>
+            <to-view-id>/admin/voteRecord/single.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/singleVote/addSingleVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>addSuccess</from-outcome>
+            <to-view-id>/admin/singleVote/addSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>addFailure</from-outcome>
+            <to-view-id>/admin/singleVote/addFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/singleVote/updateSingleVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>updateSuccess</from-outcome>
+            <to-view-id>/admin/singleVote/updateSuccess.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/auditionVote/updateAuditionVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>updateAuditionVote</from-outcome>
+            <to-view-id>/admin/auditionVote/updateAuditionVote.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/auditionVote/addAuditionVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>addSuccess</from-outcome>
+            <to-view-id>/admin/auditionVote/addSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>addFailure</from-outcome>
+            <to-view-id>/admin/auditionVote/addFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/user/auditionVote/voteAudition.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>failureVote</from-outcome>
+            <to-view-id>/user/auditionVote/failureVote.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>voteAuditionSuccess</from-outcome>
+            <to-view-id>/user/auditionVote/voteAuditionSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>timeNot</from-outcome>
+            <to-view-id>/user/auditionVote/timeNot.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/auditionVote/updateAuditionVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>updateSuccess</from-outcome>
+            <to-view-id>/admin/auditionVote/updateSuccess.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/auditionVote/auditionVoteList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>auditionVoteList</from-outcome>
+            <to-view-id>/admin/auditionVote/auditionVoteList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>auditionTotal</from-outcome>
+            <to-view-id>/admin/voteRecord/audition.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/multiVote/addMultiVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>addMultiVoteSuccess</from-outcome>
+            <to-view-id>/admin/multiVote/addMultiVoteSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>addFailure</from-outcome>
+            <to-view-id>/admin/multiVote/addFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/multiVote/multiVoteList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>multiVoteList</from-outcome>
+            <to-view-id>/admin/multiVote/multiVoteList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>updateMultiVote</from-outcome>
+            <to-view-id>/admin/multiVote/updateMultiVote.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>multiTotal</from-outcome>
+            <to-view-id>/admin/voteRecord/multi.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/admin/multiVote/updateMultiVote.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>updateSuccess</from-outcome>
+            <to-view-id>/admin/multiVote/updateSuccess.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/user/multiVote/voteMulti.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voteMultiSuccess</from-outcome>
+            <to-view-id>/user/multiVote/voteMultiSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failureVote</from-outcome>
+            <to-view-id>/user/multiVote/failureVote.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>timeNot</from-outcome>
+            <to-view-id>/user/multiVote/timeNot.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/common/voteRecord/recordIndex.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>user</from-outcome>
+            <to-view-id>/user/userIndex.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/admin/adminIndex.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>
